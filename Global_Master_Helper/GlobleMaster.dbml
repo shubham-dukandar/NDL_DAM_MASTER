@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="NDL_DAM_SA" Class="GlobleMasterDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-NVPE0V4\SQLEXPRESS;Initial Catalog=NDL_DAM_SA;User ID=sa" SettingsObjectName="Global_Master_Helper.Properties.Settings" SettingsPropertyName="NDL_DAM_SAConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.M_ACCESS" Member="M_ACCESSes">
+    <Type Name="M_ACCESS">
+      <Column Name="OBJ_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OBJ_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OBJ_PARENT_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OBJ_TYPE" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="OBJ_URL" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="OBJ_SEQ" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OBJ_LEVEL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RELATIVE_NAME" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="DELETED_YN" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PANEL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROCESS_NAME" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FK_CLIENTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M_ACCESS_OBJ_ROLE_MAP" Member="M_ACCESS_OBJ_ROLE_MAPs">
+    <Type Name="M_ACCESS_OBJ_ROLE_MAP">
+      <Column Name="PK_ACCESS_OBJ_ROLE_ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AMD_BY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AMD_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IS_ACTIVE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ACCESS_ROLE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OBJECT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PANEL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_CLIENTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M_ACCESS_PANEL" Member="M_ACCESS_PANELs">
+    <Type Name="M_ACCESS_PANEL">
+      <Column Name="PANE_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PANE_DESC" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="DISPLAY_SEQ" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PANE_TYPE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M_ACCESS_ROLES" Member="M_ACCESS_ROLEs">
+    <Type Name="M_ACCESS_ROLE">
+      <Column Name="PK_ROLE_ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ROLE_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AMD_BY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AMD_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FK_CLIENTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M_AUDITTRAIL" Member="M_AUDITTRAILs">
+    <Type Name="M_AUDITTRAIL">
+      <Column Name="PK_AUDIT_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PROCESSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="INSTANCEID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STEPNAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ACTION" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="REMARK" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="CREATEDBY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PERFORMERTYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ACTIONBYUSER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ACTIONDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M_EMPLOYEE" Member="M_EMPLOYEEs">
+    <Type Name="M_EMPLOYEE">
+      <Column Name="PK_EMP_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AD_ID" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PASSWORD" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="EMP_NAME" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="EMP_CODE" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MOBILE_NO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ADDRESS" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="EMAILID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FK_DESIGNATION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_BRANCH_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_DEPARTMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_COMPANY_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATE_JOINING" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATE_BIRTH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LAST_WORKING_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FK_DIVISION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_VERTICAL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_COST_CENTER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CREATION_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IFSCCODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FK_GRADE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ADMINREPORTING_TO" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="FUNCTIONALREPORTING_TO" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="REGIONAL_HR" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="FK_CLIENTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REGIONAL_FLAG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_LOGIN" Member="T_LOGINs">
+    <Type Name="T_LOGIN">
+      <Column Name="PK_LOGIN_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LOGINID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LOGINTIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LOGOUTTIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TOKENID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DOMAIN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="APP_SESSID" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="FORCELOGPUTFLAG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DOMAINHOSTNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_MAILLOG" Member="T_MAILLOGs">
+    <Type Name="T_MAILLOG">
+      <Column Name="PK_MAIL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_PROCESSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_INSTANCEID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_WIID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STEP_NAME" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ACTION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TO_MAIL" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="CC_MAIL" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="MAIL_BODY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MAILSENT_FLAG" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CREATION_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SENT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HEADER" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="SENDINGFAIL_FLAG" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ERROR_MSG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M_CATEGORY" Member="M_CATEGORies">
+    <Type Name="M_CATEGORY">
+      <Column Name="PK_CAT_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CATEGORY_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CATEGORY_DESC" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_CLIENTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M_REQUEST" Member="M_REQUESTs">
+    <Type Name="M_REQUEST">
+      <Column Name="PK_REQUEST_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="REQUEST_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="REQUEST_DESC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_CLIENTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M_SUB_CATEGORY" Member="M_SUB_CATEGORies">
+    <Type Name="M_SUB_CATEGORY">
+      <Column Name="PK_SUB_CAT_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SUB_CATEGORY_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SUB_CATEGORY_DESC" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_CLIENTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_CAT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M_DEPARTMENT" Member="M_DEPARTMENTs">
+    <Type Name="M_DEPARTMENT">
+      <Column Name="PK_DEPARTMENT_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DEPARTMENT_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DEPARTMENT_DESC" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CREATION_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DEPARTMENT_HEAD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FK_CLIENTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M_CURRENCY" Member="M_CURRENCies">
+    <Type Name="M_CURRENCY">
+      <Column Name="PK_CURRENCY_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CURRENCY_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CURRENCY_DESC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_CLIENTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CURRENCY_RATE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M_DOCUMENTS" Member="M_DOCUMENTs">
+    <Type Name="M_DOCUMENT">
+      <Column Name="PK_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OBJECT_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="OBJECT_VALUE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FILENAME" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="PATH" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DOCUMENT_TYPE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M_UNIQUENUMBER" Member="M_UNIQUENUMBERs">
+    <Type Name="M_UNIQUENUMBER">
+      <Column Name="PK_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FINANCIAL_YEAR" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MONTH" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="OBJECT_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OBJECTTYPE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M_APPROVAL_MATRIX" Member="M_APPROVAL_MATRIXes">
+    <Type Name="M_APPROVAL_MATRIX">
+      <Column Name="PK_APPROVAL_MATRIX_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ROLE_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FLAG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ORDER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M_ACCESS_USR_ROLE_MAP" Member="M_ACCESS_USR_ROLE_MAPs">
+    <Type Name="M_ACCESS_USR_ROLE_MAP">
+      <Column Name="PK_USER_ROLE_ACCESS_ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AMD_BY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AMD_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IS_ACTIVE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="USER_ADID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ACCESS_ROLE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FK_CLIENTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMP_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EMAILID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_1" Member="View_1s">
+    <Type Name="View_1">
+      <Column Name="PK_AUDIT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ACTION" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ACTIONBYUSER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ACTIONBYEMPNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ACTIONDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STEPNAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="REMARK" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="FK_PROCESS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_INSTANCE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PK_TRANSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STEP_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ASSIGN_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="END_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TAT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M_REGION" Member="M_REGIONs">
+    <Type Name="M_REGION">
+      <Column Name="PK_REGION_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="REGION_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="REGION_CODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FK_CLIENTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.M_DIVISION" Member="M_DIVISIONs">
+    <Type Name="M_DIVISION">
+      <Column Name="PK_DIVISION_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DIVISION_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DIVISION_CODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FK_CLIENTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_DEALNOTE_HDR" Member="T_DEALNOTE_HDRs">
+    <Type Name="T_DEALNOTE_HDR">
+      <Column Name="PK_DEALNOTE_HDR_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_PROCESS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_INSTANCE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DNREQUEST_NO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FK_DEPT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SHORT_DESC" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="FK_REQUESTFOR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_CAT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_SUBCAT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_CURRENCY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROLLOUT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="VALIDTILL_DATE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AMOUNT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DESC_FOR_REQUEST" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARK" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IS_SMS_Config" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Business_Justification" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Recommendation" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Imp_Timelines" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EMAILID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FK_REGION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_DIVISION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.P_GET_PANELWISE_PAGEACCESS" Method="P_GET_PANELWISE_PAGEACCESS">
+    <Parameter Name="in_s_roleid" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="in_s_paneid" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="P_GET_PANELWISE_PAGEACCESSResult">
+      <Column Name="OBJ_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="label" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="hasaccess" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ACCESS_ROLE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.P_GET_MAIL_BODY_TABLE" Method="P_GET_MAIL_BODY_TABLE" IsComposable="true">
+    <Parameter Name="inMAILID" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="MAIL_BODY_TABLE" Parameter="mAIL_BODY_TABLE" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.GETREQUESTNO" Method="GETREQUESTNO">
+    <Parameter Name="inObjectType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="RegnNumber" Parameter="regnNumber" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.P_GET_APPROVAL_INFO" Method="P_GET_APPROVAL_INFO">
+    <Parameter Name="InstancId" Parameter="instancId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProcessId" Parameter="processId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="P_GET_APPROVAL_INFOResult">
+      <Column Name="PERFORMER_EMAILID" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="FK_STEPID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STEP_NAME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="is_initiator" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.P_GET_DASHBOARD_DATA" Method="P_GET_DASHBOARD_DATA">
+    <Parameter Name="inUserName" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="P_GET_DASHBOARD_DATAResult">
+      <Column Name="req_pending" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="req_approved" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dealnote_count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dn_submit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dn_approved" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dn_sendback" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dn_modification" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.P_GET_RPT_DEAL_NOTE_HDR" Method="P_GET_RPT_DEAL_NOTE_HDR">
+    <ElementType Name="P_GET_RPT_DEAL_NOTE_HDRResult">
+      <Column Name="DNREQUEST_NO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FK_PROCESS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_INSTANCE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DEPARTMENT_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="REQUEST_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="REQUEST_DESC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SHORT_DESC" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="CATEGORY_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SUB_CATEGORY_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SUB_CATEGORY_DESC" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="VALID_TILL_DATE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CURRENCY_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AMOUNT" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DESC_FOR_REQUEST" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARK" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IS_SMS_CONFIG" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Business_Justification" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Recommendation" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Imp_Timelines" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PENDING_WITH" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="REGION_NAME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DIVISION_NAME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

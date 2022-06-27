@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NDL_DAM_MASTER", "NDL_DAM_MASTER\NDL_DAM_MASTER.csproj", "{58338273-0F49-451B-A97C-62960757C5BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Global_Master_Helper", "Global_Master_Helper\Global_Master_Helper.csproj", "{711BEB68-010D-4334-85CA-4D72CF174D63}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58338273-0F49-451B-A97C-62960757C5BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58338273-0F49-451B-A97C-62960757C5BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58338273-0F49-451B-A97C-62960757C5BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58338273-0F49-451B-A97C-62960757C5BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{711BEB68-010D-4334-85CA-4D72CF174D63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{711BEB68-010D-4334-85CA-4D72CF174D63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{711BEB68-010D-4334-85CA-4D72CF174D63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{711BEB68-010D-4334-85CA-4D72CF174D63}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E2C6F1C-8751-4406-981B-2CA630D101DA}
+	EndGlobalSection
+EndGlobal

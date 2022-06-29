@@ -37,7 +37,7 @@ namespace Global_Master_Helper.Masters.DealNote
                         a.id = Convert.ToInt32(data.PK_CURRENCY_ID);
                         //  a.label = new CultureInfo("en").TextInfo.ToTitleCase(data.CURRENCY_NAME.ToLower());
                         a.label = data.CURRENCY_NAME;
-                        a.Currency_Desc = new CultureInfo("en").TextInfo.ToTitleCase(data.CURRENCY_DESC.ToLower());
+                        a.Currency_Desc = new CultureInfo("en").TextInfo.ToTitleCase(data.CURRENCY_DESC);
                         a.FK_CLIENTID = Convert.ToInt32(data.FK_CLIENTID);
                         a.EMP_NAME = data.CREATED_BY;
                         a.CREATION_DATE = Convert.ToDateTime(data.CREATED_DATE);

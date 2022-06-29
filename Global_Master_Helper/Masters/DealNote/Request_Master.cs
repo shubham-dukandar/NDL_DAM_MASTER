@@ -34,7 +34,7 @@ namespace Global_Master_Helper.Masters.DealNote
                     {
                         Request a = new Request();
                         a.id = Convert.ToInt32(data.PK_REQUEST_ID);
-                        a.label = new CultureInfo("en").TextInfo.ToTitleCase(data.REQUEST_NAME.ToLower());
+                        a.label = new CultureInfo("en").TextInfo.ToTitleCase(data.REQUEST_NAME.ToUpper());
                         a.REQUEST_DESC = new CultureInfo("en").TextInfo.ToTitleCase(data.REQUEST_DESC.ToLower());
                         a.FK_CLIENTID = Convert.ToInt32(data.FK_CLIENTID);
                         a.EMP_NAME = data.CREATED_BY;

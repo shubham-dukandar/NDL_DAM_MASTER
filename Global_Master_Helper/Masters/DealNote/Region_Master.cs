@@ -33,7 +33,7 @@ namespace Global_Master_Helper.Masters.DealNote
                     {
                         Region a = new Region();
                         a.id = Convert.ToInt32(data.PK_REGION_ID);
-                        a.label = new CultureInfo("en").TextInfo.ToTitleCase(data.REGION_NAME.ToLower());
+                        a.label = new CultureInfo("en").TextInfo.ToTitleCase(data.REGION_NAME);
                         a.REGION_CODE = new CultureInfo("en").TextInfo.ToTitleCase(data.REGION_CODE.ToLower());
                         a.FK_CLIENTID = Convert.ToInt32(data.FK_CLIENTID);
                         a.EMP_NAME = data.CREATED_BY;

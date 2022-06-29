@@ -35,7 +35,7 @@ namespace Global_Master_Helper.Masters.DealNote
                     {
                         SubCategory a = new SubCategory();
                         a.id = Convert.ToInt32(data.PK_SUB_CAT_ID);
-                        a.label = new CultureInfo("en").TextInfo.ToTitleCase(data.SUB_CATEGORY_NAME.ToLower());
+                        a.label = new CultureInfo("en").TextInfo.ToTitleCase(data.SUB_CATEGORY_NAME);
                         a.SUB_CATEGORY_DESC = new CultureInfo("en").TextInfo.ToTitleCase(data.SUB_CATEGORY_DESC.ToLower());
                         a.FK_CLIENTID = Convert.ToInt32(data.FK_CLIENTID);
                         a.EMP_NAME = data.CREATED_BY;

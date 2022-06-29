@@ -33,7 +33,7 @@ namespace Global_Master_Helper.Masters.DealNote
                     {
                         Division a = new Division();
                         a.id = Convert.ToInt32(data.PK_DIVISION_ID);
-                        a.label = new CultureInfo("en").TextInfo.ToTitleCase(data.DIVISION_NAME.ToLower());
+                        a.label = new CultureInfo("en").TextInfo.ToTitleCase(data.DIVISION_NAME.ToUpper());
                         a.DIVISON_CODE = new CultureInfo("en").TextInfo.ToTitleCase(data.DIVISION_CODE.ToLower());
                         a.FK_CLIENTID = Convert.ToInt32(data.FK_CLIENTID);
                         a.EMP_NAME = data.CREATED_BY;

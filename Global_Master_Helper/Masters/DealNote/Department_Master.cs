@@ -36,7 +36,7 @@ namespace Global_Master_Helper.Masters.DealNote
                     {
                         Department a = new Department();
                         a.id = Convert.ToInt32(data.PK_DEPARTMENT_ID);
-                        a.label = new CultureInfo("en").TextInfo.ToTitleCase(data.DEPARTMENT_NAME.ToLower());
+                        a.label = new CultureInfo("en").TextInfo.ToTitleCase(data.DEPARTMENT_NAME.ToUpper());
                         a.DEPARTMENT_DESC = new CultureInfo("en").TextInfo.ToTitleCase(data.DEPARTMENT_DESC.ToLower());
                         a.FK_CLIENTID = Convert.ToInt32(data.FK_CLIENTID);
                         a.EMP_NAME = data.CREATED_BY;

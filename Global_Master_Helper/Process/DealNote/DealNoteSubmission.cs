@@ -22,7 +22,7 @@ namespace Global_Master_Helper.Process.DealNote
                     context.Connection.Open();
                     context.Transaction = context.Connection.BeginTransaction();
 
-                    T_DEALNOTE_HDR check = (from c in context.T_DEALNOTE_HDRs where c.FK_REQUESTFOR_ID == objHdrDetail[0].FK_REQUESTFOR_ID && c.FK_DEPT_ID == objHdrDetail[0].FK_DEPT_ID && c.FK_CAT_ID == objHdrDetail[0].FK_CAT_ID && c.FK_SUBCAT_ID == objHdrDetail[0].FK_SUBCAT_ID && c.AMOUNT==objHdrDetail[0].AMOUNT select c).FirstOrDefault();
+                    T_DEALNOTE_HDR check = null;//(from c in context.T_DEALNOTE_HDRs where c.FK_REQUESTFOR_ID == objHdrDetail[0].FK_REQUESTFOR_ID && c.FK_DEPT_ID == objHdrDetail[0].FK_DEPT_ID && c.FK_CAT_ID == objHdrDetail[0].FK_CAT_ID && c.FK_SUBCAT_ID == objHdrDetail[0].FK_SUBCAT_ID && c.AMOUNT==objHdrDetail[0].AMOUNT select c).FirstOrDefault();
                     // Convert.ToDateTime(c.VALIDTILL_DATE).Date == Convert.ToDateTime(objHdrDetail[0].VALIDTILL_DATE).Date
                     if (check == null)
                     {
